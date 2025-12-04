@@ -25,3 +25,49 @@
 安装必要的依赖库：
 ```bash
 pip install requests
+```
+
+### 2. 获取通知 Token
+本项目使用 PushPlus 进行微信推送：
+
+访问 PushPlus 官网。
+
+使用微信扫码登录。
+
+在“发送消息” -> “一对一消息”中复制你的 Token。
+
+### 3. 配置参数
+打开 monitor.py 文件，修改顶部的配置区域：
+
+Python
+
+1. 填入你的 PushPlus Token
+```
+my_token = '这里粘贴你的Token'
+```
+
+2. 修改监控名单
+```
+target_coins = ['BTCUSDT', 'ETHUSDT', 'SOLUSDT', 'BNBUSDT']
+```
+
+3. 设置报警阈值 (例如 0.05 代表 5%)
+```
+threshold_percent = 0.05
+```
+
+4. 设置时间窗口 (秒)
+```
+window_seconds = 300 
+```
+
+5. 设置冷却时间 (秒)
+```
+cooldown_seconds = 900
+```
+
+### 4. 运行程序
+在终端或命令行中运行：
+
+```bash
+python monitor.py
